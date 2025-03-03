@@ -29,8 +29,6 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USR }}/php-web:latest
 
-
-    # Step 5: Log in to Azure using Service Principal (stored in GitHub secrets)
     - name: Log in to Azure
       run: |
         az login --tenant ${{ secrets.AZURE_TENANT_ID }}
@@ -41,6 +39,6 @@ jobs:
 
     # Step 7: Apply the Kubernetes deployment and service YAML files
     - name: Deploy to AKS
-      run: |
+      run: | 
         kubectl apply -f ./k8s/php.yaml 
         kubectl apply -f ./k8s/php-service.yaml 
