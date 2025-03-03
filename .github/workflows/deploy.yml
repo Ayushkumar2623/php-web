@@ -29,9 +29,6 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USR }}/php-web:latest
 
-    # Step 4: Set up Azure CLI to interact with Azure
-    - name: Set up Azure CLI
-      uses: azure/setup-azurecli@v1
 
     # Step 5: Log in to Azure using Service Principal (stored in GitHub secrets)
     - name: Log in to Azure
