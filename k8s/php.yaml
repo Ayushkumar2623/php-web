@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-web
+  template:
+    metadata:
+      labels:
+        app: php-web
+    spec:
+      containers:
+        - name: php-web-container
+          image: ayush2326/php_web:k8s
+          ports:
+            - containerPort: 8080
+
