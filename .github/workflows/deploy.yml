@@ -42,6 +42,5 @@ jobs:
     # Step 7: Apply the Kubernetes deployment and service YAML files
     - name: Deploy to AKS
       run: |
-        cd k8s
-        kubectl apply -f php.yaml 
-        kubectl apply -f php-service.yaml 
+        kubectl apply -f ./k8s/php.yaml 
+        kubectl apply -f ./k8s/php-service.yaml 
