@@ -16,5 +16,5 @@ spec:
         - name: php-web-container
           image: ayush2326/php_web:k8s
           ports:
-            - containerPort: 8080
+            - containerPort: 8000
 
