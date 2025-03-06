@@ -32,13 +32,6 @@ jobs:
         IMAGE="${{ secrets.DOCKER_USR }}/php-web:$IMAGE_TAG"
         docker push $IMAGE
 
-
-    # - name: Build and push Docker image
-    #  uses: docker/build-push-action@v3
-    #  with:
-    #    context: .
-    #    push: true
-    #    tags: ${{ secrets.DOCKER_USR }}/php-web:${GITHUB_SHA}  
     - name: Log in to Azure
       run: |
         az login --tenant ${{ secrets.AZURE_TENANT_ID }}
@@ -53,11 +46,10 @@ jobs:
 
     - name: Update image in Kubernetes deployment
       run: |
-        # CHANGED: Updated the image with the commit hash tag
         kubectl set image deployment/php-web php-web-container=${{ secrets.DOCKER_USR }}/php-web:${GITHUB_SHA}
-        kubectl rollout status deployment/php-web  # Wait for the deployment to complete
+        kubectl rollout status deployment/php-web 
 
     - name: Restart Pods to Ensure Changes are Applied
       run: |
         kubectl rollout restart deployment/php-web
-        kubectl rollout status deployment/php-web  # Wait for the restart to complete
+        kubectl rollout status deployment/php-web  
