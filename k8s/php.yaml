@@ -15,6 +15,7 @@ spec:
       containers:
         - name: php-web-container
           image: ayush2326/php-web:v5
+          imagePullPolicy: Always
           ports:
             - containerPort: 9000  
 #          volumeMounts:
