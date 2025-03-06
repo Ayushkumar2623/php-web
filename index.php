@@ -90,7 +90,7 @@
                 <div class="camera_caption">
                     <h2 class="wow fadeInUp animated">Make Your life easy</h2>
                     <h5 class="wow fadeIn animated" data-wow-delay="0.3s">choose everything accordingly</h5>
-                    <a class="learn_mor wow fadeInU" data-wow-delay="0.6s" href="#product-list">Show Now!</a>
+                    <a class="learn_mor wow fadeInU" data-wow-delay="0.6s" href="#product-list">otherwise!</a>
                 </div>
             </div>
         </section>
