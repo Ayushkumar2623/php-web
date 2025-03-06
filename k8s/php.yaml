@@ -14,7 +14,23 @@ spec:
     spec:
       containers:
         - name: php-web-container
-          image: ayush2326/php_web:k8s
+          image: ayush2326/php-web:v5
           ports:
-            - containerPort: 8000
+            - containerPort: 9000  
+#          volumeMounts:
+#            - name: web-content
+#              mountPath: /var/www/html
+#
+#        - name: nginx
+#          image: ayush2326/nginx:app
+#          ports:
+#            - containerPort: 80 
+#          volumeMounts:
+#            - name: web-content
+#              mountPath: /usr/share/nginx/html
+#
+#      volumes:
+#        - name: web-content
+#          emptyDir: {}
+#
 
