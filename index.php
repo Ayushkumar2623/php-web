@@ -88,8 +88,8 @@
         <section class="slider_area row m0">
             <div class="slider_inner">
                 <div class="camera_caption">
-                    <h2 class="wow fadeInUp animated">Make Your task hard</h2>
-                    <h5 class="wow fadeIn animated" data-wow-delay="0.3s">Find everything accordingly</h5>
+                    <h2 class="wow fadeInUp animated">Make Your life easy</h2>
+                    <h5 class="wow fadeIn animated" data-wow-delay="0.3s">choose everything accordingly</h5>
                     <a class="learn_mor wow fadeInU" data-wow-delay="0.6s" href="#product-list">Show Now!</a>
                 </div>
             </div>
