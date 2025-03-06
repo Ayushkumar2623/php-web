@@ -43,7 +43,8 @@ jobs:
       run: | 
         kubectl apply -f ./k8s/php.yaml 
         kubectl apply -f ./k8s/php-service.yaml 
-      name: Deploy to AKS
+      
+    - name: update image
       run: |
           kubectl apply -f ./k8s/php.yaml
           kubectl set image deployment/php-web php-web-container=${{ secrets.DOCKER_USR }}/php-web:${GITHUB_SHA}
