@@ -23,17 +23,17 @@ jobs:
     - name: build and tag image
       run: |
         IMAGE_TAG="${GITHUB_SHA}"
-                IMAGE="${{ secrets.DOCKER_USERNAME }}/php-web:$IMAGE_TAG"
+                IMAGE="${{ secrets.DOCKER_USR }}/php-web:$IMAGE_TAG"
                 docker build -t $IMAGE .
         
     - name: push docker image
       run: |
         IMAGE_TAG="${GITHUB_SHA}"
-        IMAGE="${{ secrets.DOCKER_USERNAME }}/php-web:$IMAGE_TAG"
+        IMAGE="${{ secrets.DOCKER_USR }}/php-web:$IMAGE_TAG"
         docker push $IMAGE
 
 
-    #- name: Build and push Docker image
+    # - name: Build and push Docker image
     #  uses: docker/build-push-action@v3
     #  with:
     #    context: .
