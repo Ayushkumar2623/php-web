@@ -18,20 +18,4 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9000  
-#          volumeMounts:
-#            - name: web-content
-#              mountPath: /var/www/html
-#
-#        - name: nginx
-#          image: ayush2326/nginx:app
-#          ports:
-#            - containerPort: 80 
-#          volumeMounts:
-#            - name: web-content
-#              mountPath: /usr/share/nginx/html
-#
-#      volumes:
-#        - name: web-content
-#          emptyDir: {}
-#
 
