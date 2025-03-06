@@ -19,13 +19,26 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USR }}
         password: ${{ secrets.DOCKER_PASS }}
+    
+    - name: build and tag image
+      run: |
+        IMAGE_TAG="${GITHUB_SHA}"
+                IMAGE="${{ secrets.DOCKER_USERNAME }}/php-web:$IMAGE_TAG"
+                docker build -t $IMAGE .
+        
+    - name: push docker image
+      run: |
+        IMAGE_TAG="${GITHUB_SHA}"
+        IMAGE="${{ secrets.DOCKER_USERNAME }}/php-web:$IMAGE_TAG"
+        docker push $IMAGE
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKER_USR }}/php-web:${GITHUB_SHA}  
+
+    #- name: Build and push Docker image
+    #  uses: docker/build-push-action@v3
+    #  with:
+    #    context: .
+    #    push: true
+    #    tags: ${{ secrets.DOCKER_USR }}/php-web:${GITHUB_SHA}  
     - name: Log in to Azure
       run: |
         az login --tenant ${{ secrets.AZURE_TENANT_ID }}
